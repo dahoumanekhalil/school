@@ -13,6 +13,15 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      colors: {
+        beproGreen: "#C3EBFA",
+        beproBlack: "#EDF9FD",
+        beproWhite: "#FFF",
+        beproPurple: "#CFCEFF",
+        beproPurpleLight: "#F1F0FF",
+        beproYellow: "#FAE27C",
+        beproYellowLight: "#FEFCE8",
+      },
     },
   },
   plugins: [],
