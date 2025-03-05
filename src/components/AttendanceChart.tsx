@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import {
   BarChart,
   Bar,
@@ -14,44 +15,96 @@ import {
 
 const data = [
   {
-    name: "Page A",
-    uv: 4000,
-    pv: 2400,
+    name: "1",
+    المشغولين: 61,
+    المريحين: 51,
   },
   {
-    name: "Page B",
-    uv: 3000,
-    pv: 1398,
+    name: "2",
+    المشغولين: 73,
+    المريحين: 80,
   },
   {
-    name: "Page C",
-    uv: 2000,
-    pv: 9800,
+    name: "3",
+    المشغولين: 42,
+    المريحين: 83,
   },
   {
-    name: "Page D",
-    uv: 2780,
-    pv: 3908,
+    name: "4",
+    المشغولين: 71,
+    المريحين: 24,
   },
   {
-    name: "Page E",
-    uv: 1890,
-    pv: 4800,
+    name: "5",
+    المشغولين: 12,
+    المريحين: 32,
   },
   {
-    name: "Page F",
-    uv: 2390,
-    pv: 3800,
+    name: "6",
+    المشغولين: 83,
+    المريحين: 92,
   },
   {
-    name: "Page G",
-    uv: 3490,
-    pv: 4300,
+    name: "7",
+    المشغولين: 39,
+    المريحين: 57,
   },
 ];
 
 const AttendanceChart = () => {
-  return <div className="">AttendanceChart</div>;
+  return (
+    <div className="bg-white rounded-lg p-4 h-full">
+      <div className="flex justify-between items-center">
+        <h1 className="text-lg font-semibold">Attendance</h1>
+        <Image
+          src="/moreDark.png"
+          alt="icon"
+          width={20}
+          height={20}
+          className="cursor-pointer hover:scale-125 transition-all"
+        />
+      </div>
+      <ResponsiveContainer width="100%" height="90%">
+        <BarChart width={500} height={300} data={data} barSize={20}>
+          <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#ddd" />
+          <XAxis
+            dataKey="name"
+            axisLine={false}
+            tick={{ fill: "#d1d5db" }}
+            tickLine={false}
+          />
+          <YAxis axisLine={false} />
+          <Tooltip
+            contentStyle={{ borderRadius: "10px", borderColor: "lightgray" }}
+          />
+          <Legend
+            align="left"
+            verticalAlign="top"
+            wrapperStyle={{ paddingTop: "5px", paddingBottom: "20px" }}
+          />
+          <Bar
+            dataKey="المريحين"
+            fill="#8884d8"
+            radius={[10, 10, 0, 0]}
+            activeBar={
+              <Rectangle fill="rgba(255, 99, 132, 0.2)" stroke="blue" />
+            }
+          />
+          <Bar
+            dataKey="المشغولين"
+            fill="#82ca9d"
+            radius={[10, 10, 0, 0]}
+            activeBar={
+              <Rectangle
+                fill="rgb(54, 162, 235,0.2)"
+                stroke="rgb(54, 162, 235)"
+              />
+            }
+          />
+        </BarChart>
+      </ResponsiveContainer>
+    </div>
+  );
 };
 
 export default AttendanceChart;
