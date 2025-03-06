@@ -84,22 +84,19 @@ const AttendanceChart = () => {
           />
           <Bar
             dataKey="المريحين"
-            fill="#8884d8"
+            fill="#002433"
+            stroke="#00ff84"
             radius={[10, 10, 0, 0]}
-            activeBar={
-              <Rectangle fill="rgba(255, 99, 132, 0.2)" stroke="blue" />
-            }
+            // activeBar={<Rectangle fill="#1087FFcc" stroke="#002433" />}
           />
           <Bar
             dataKey="المشغولين"
-            fill="#82ca9d"
+            fill="#00FF84"
+            stroke="#002433"
             radius={[10, 10, 0, 0]}
-            activeBar={
-              <Rectangle
-                fill="rgb(54, 162, 235,0.2)"
-                stroke="rgb(54, 162, 235)"
-              />
-            }
+            // activeBar={
+            //   <Rectangle fill="#1087FF77" stroke="rgb(54, 162, 235)" />
+            // }
           />
         </BarChart>
       </ResponsiveContainer>

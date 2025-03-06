@@ -125,7 +125,7 @@ const FinanceChart = () => {
           <Line
             type="monotone"
             dataKey="N_users"
-            stroke="#82ca9d"
+            stroke="#00FF84"
             strokeWidth={5}
           />
         </LineChart>

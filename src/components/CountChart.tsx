@@ -19,13 +19,13 @@ const data = [
     name: "girls",
     count: 55,
     // pv: 4567,
-    fill: "#FAE27C",
+    fill: "#00FF84",
   },
   {
     name: "boys",
     count: 45,
     // pv: 1398,
-    fill: "#C3EBFA",
+    fill: "#002433",
   },
 ];
 
@@ -63,13 +63,13 @@ const CountChart = () => {
       {/* bottom  */}
       <div className="flex justify-center gap-16">
         <div className="flex flex-col gap-1">
-          <div className="w-5 h-5 bg-beproGreen rounded-full" />
+          <div className="w-5 h-5 bg-[#002433] rounded-full" />
           <h1 className="font-bold">1,234</h1>
           <h2 className="text-xs text-gray-300 ">boys (45%)</h2>
         </div>
 
         <div className="flex flex-col gap-1">
-          <div className="w-5 h-5 bg-beproYellow rounded-full" />
+          <div className="w-5 h-5 bg-[#00FF84] rounded-full" />
           <h1 className="font-bold">1,234</h1>
           <h2 className="text-xs text-gray-300 ">girls (55%)</h2>
         </div>

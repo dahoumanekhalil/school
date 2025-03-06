@@ -14,8 +14,8 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       colors: {
-        beproGreen: "#C3EBFA",
-        beproBlack: "#EDF9FD",
+        beproGreen: "#00FF84",
+        beproBlack: "#002433",
         beproWhite: "#FFF",
         beproPurple: "#CFCEFF",
         beproPurpleLight: "#F1F0FF",
