@@ -35,12 +35,8 @@ const AdminPage = () => {
       {/* right */}
       <div className="w-full lg:w-[25%] flex flex-col gap-8">
         {/* calendar  */}
-        <div className="">
-          <EventCalendar />
-        </div>
-        <div className="">
-          <Announcements />
-        </div>
+        <EventCalendar />
+        <Announcements />
       </div>
     </div>
   );
