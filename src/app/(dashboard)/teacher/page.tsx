@@ -1,9 +1,9 @@
 import Announcements from "@/components/Announcements";
 import BigCalendar from "@/components/BigCalendar";
 
-const TeacherPage = () => {
+const TeasherPage = () => {
   return (
-    <div className="p-4 flex gap-4 flex-col xl:flex-row">
+    <div className="flex-1 p-4 flex gap-4 flex-col xl:flex-row">
       {/* left  */}
       <div className="w-full xl:w-[75%]">
         <div className="w-full bg-white p-4 rounded-md">
@@ -23,4 +23,4 @@ const TeacherPage = () => {
   );
 };
 
-export default TeacherPage;
+export default TeasherPage;

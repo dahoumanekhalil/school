@@ -25,7 +25,7 @@ export default function DashboardLayout({
       </div>
 
       {/* rigt side */}
-      <div className="w-[86%] md:w-[86%] lg:w-[82] xl:w-[86] bg-[#f7f8fa] overflow-scroll">
+      <div className="w-[86%] md:w-[86%] lg:w-[82] xl:w-[86] bg-[#f7f8fa] overflow-scroll flex flex-col">
         <Navbar />
         {children}
       </div>
