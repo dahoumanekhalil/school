@@ -19,7 +19,7 @@ const config: Config = {
         beproWhite: "#FFF",
         beproPurple: "#CFCEFF",
         beproPurpleLight: "#F1F0FF",
-        beproYellow: "#FAE27C",
+        beproSky: "#00FF8466",
         beproYellowLight: "#FEFCE8",
       },
     },
