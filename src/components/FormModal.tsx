@@ -1,15 +1,47 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import { useState } from "react";
-import TeacherForm from "./forms/TeacherForm";
-import StudentForm from "./forms/StudentForm";
+import ParentForm from "./forms/ParentForm";
+import SubjectForm from "./forms/SubjectForm";
+// import SubjectForm from "./forms/SubjectForm";
+import ClassForm from "./forms/ClassForm";
+import LessonForm from "./forms/LessonForm";
+import ResultForm from "./forms/ResultForm";
+import ExamForm from "./forms/ExamForm";
+import EventForm from "./forms/EventForm";
+import AssignmentForm from "./forms/AssignmentForm";
+import PriorityForm from "./forms/TeacherForm";
+// import TeacherForm from "./forms/TeacherForm";
+// import StudentForm from "./forms/StudentForm";
+
+const TeacherForm = dynamic(() => import("./forms/TeacherForm"), {
+  loading: () => (
+    <h1 className="flex justify-center text-center">Loading...</h1>
+  ),
+});
+const StudentForm = dynamic(() => import("./forms/StudentForm"), {
+  // loading: () => <h1>Loading...</h1>,
+  loading: () => (
+    <h1 className="flex justify-center text-center">Loading...</h1>
+  ),
+});
 
 const forms: {
   [key: string]: (type: "create" | "update", data?: any) => JSX.Element;
 } = {
   teacher: (type, data) => <TeacherForm type={type} data={data} />,
   students: (type, data) => <StudentForm type={type} data={data} />,
+  parent: (type, data) => <ParentForm type={type} data={data} />,
+  subject: (type, data) => <SubjectForm type={type} data={data} />,
+  class: (type, data) => <ClassForm type={type} data={data} />,
+  lesson: (type, data) => <LessonForm type={type} data={data} />,
+  result: (type, data) => <ResultForm type={type} data={data} />,
+  exam: (type, data) => <ExamForm type={type} data={data} />,
+  event: (type, data) => <EventForm type={type} data={data} />,
+  assignment: (type, data) => <AssignmentForm type={type} data={data} />,
+  announcement: (type, data) => <PriorityForm type={type} data={data} />,
 };
 
 const FormModal = ({

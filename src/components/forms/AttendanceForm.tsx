@@ -3,19 +3,23 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import InputField from "../Inputfield";
-import Image from "next/image";
 
 const schema = z.object({
-  subjectName: z.string().min(3, { message: "write that subject you want!." }),
-  teacher: z
+  username: z
     .string()
-    .min(3, { message: "write name of teacher!." })
+    .min(3, { message: "Username must be at least 3 characters long!." })
     .max(20, { message: "username must be at most 20 characters long!." }),
   email: z.string().email({ message: "Invalid email adress!." }),
-  class: z
+  password: z
+    .string()
+    .min(8, { message: "password must be at least 8 characters long!." }),
+  firstName: z
+    .string()
+    .min(3, { message: "firstname must be at least 3 characters long!." }),
+  lastName: z
     .string()
     .min(3, { message: "lastName must be at least 3 characters long!." }),
-  grade: z
+  phone: z
     .string()
     .min(10, { message: "lastName must be at least 3 characters long!." }),
   address: z.string().min(4, { message: "address is required!." }),
@@ -52,26 +56,27 @@ const ParentForm = ({
       </span>
       <div className="flex justify-between flex-wrap gap-4">
         <InputField
-          label="Subject Name"
-          name="subjectName"
-          defaultValue={data?.subjectName}
+          label="Username"
+          name="username"
+          defaultValue={data?.username}
           register={register}
-          error={errors.subjectName}
-        />
-        <InputField
-          label="Teacher"
-          name="teacher"
-          defaultValue={data?.teacher}
-          register={register}
-          error={errors.teacher}
+          error={errors.username}
         />
         <InputField
           label="Email"
           name="email"
           type="email"
-          defaultValue={data?.email}
+          defaultValue={data?.username}
           register={register}
-          error={errors.email}
+          error={errors.username}
+        />
+        <InputField
+          label="Password"
+          name="password"
+          type="password"
+          defaultValue={data?.password}
+          register={register}
+          error={errors.password}
         />
       </div>
       <span className="text-xs text-gray-400 font-medium">
@@ -79,18 +84,25 @@ const ParentForm = ({
       </span>
       <div className="flex justify-between flex-wrap gap-4">
         <InputField
-          label="Class"
-          name="class"
-          defaultValue={data?.class}
+          label="First Name"
+          name="firstName"
+          defaultValue={data?.firstName}
           register={register}
-          error={errors.class}
+          error={errors.firstName}
         />
         <InputField
-          label="Grade"
-          name="grade"
-          defaultValue={data?.grade}
+          label="Last Name"
+          name="lastName"
+          defaultValue={data?.lastName}
           register={register}
-          error={errors.grade}
+          error={errors.lastName}
+        />
+        <InputField
+          label="Phone"
+          name="phone"
+          defaultValue={data?.phone}
+          register={register}
+          error={errors.phone}
         />
         <InputField
           label="Address"
@@ -107,6 +119,23 @@ const ParentForm = ({
           register={register}
           error={errors.birthday}
         />
+
+        <div className="flex flex-col gap-2 w-full md:w-1/4">
+          <label className="text-xs text-gray-500">sexe</label>
+          <select
+            className="ring-[1.5px] ring-red-300 p-2 rounded-md text-sm w-full"
+            {...register("sexe")}
+            defaultValue={data?.sexe}
+          >
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+          {errors.sexe?.message && (
+            <p className="text-xs text-red-400">
+              {errors.sexe.message.toString()}
+            </p>
+          )}
+        </div>
       </div>
       <button className="bg-beproGreen hover:bg-opacity-80 text-beproBlack font-bold p-2 rounded-md">
         {type === "create" ? "Create" : "Update"}
