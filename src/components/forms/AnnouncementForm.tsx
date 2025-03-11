@@ -3,15 +3,25 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import InputField from "../Inputfield";
+import Image from "next/image";
 
 const schema = z.object({
-  subjectName: z.string().min(3, { message: "write that subject you want!." }),
-  class: z
+  title: z
     .string()
-    .min(3, { message: "lastName must be at least 3 characters long!." }),
-  dueDate: z
+    .min(3, { message: "Title must be at least 3 characters long!" })
+    .max(100, { message: "Title must be at most 100 characters long!" }),
+  description: z
     .string()
-    .min(10, { message: "lastName must be at least 3 characters long!." }),
+    .min(10, { message: "Description must be at least 10 characters long!" })
+    .max(500, { message: "Description must be at most 500 characters long!" }),
+  date: z.date({ message: "Date is required!" }),
+  class: z.enum(["Class A", "Class B", "Class C", "Class D", "Class E"], {
+    message:
+      "Class must be one of: Class A, Class B, Class C, Class D, Class E!",
+  }),
+  priority: z.enum(["Low", "Medium", "High"], {
+    message: "Priority must be one of: Low, Medium, High!",
+  }),
 });
 
 type Inputs = z.infer<typeof schema>;
@@ -37,33 +47,24 @@ const AnnouncementForm = ({
 
   return (
     <form className="flex flex-col gap-8" onSubmit={onSubmit}>
-      <h1 className="text-xl font-semibold"> create a new AnnouncementForm</h1>
+      <h1 className="text-xl font-semibold"> create a new Priority</h1>
       <span className="text-xs text-gray-400 font-medium">
         authontication information
       </span>
       <div className="flex justify-between flex-wrap gap-4">
         <InputField
-          label="Username"
-          name="username"
-          defaultValue={data?.username}
+          label="Title"
+          name="title"
+          defaultValue={data?.title}
           register={register}
-          error={errors.username}
+          error={errors.title}
         />
         <InputField
-          label="Email"
-          name="email"
-          type="email"
-          defaultValue={data?.username}
+          label="Class"
+          name="class"
+          defaultValue={data?.class}
           register={register}
-          error={errors.username}
-        />
-        <InputField
-          label="Password"
-          name="password"
-          type="password"
-          defaultValue={data?.password}
-          register={register}
-          error={errors.password}
+          error={errors.class}
         />
       </div>
       <span className="text-xs text-gray-400 font-medium">
@@ -71,55 +72,28 @@ const AnnouncementForm = ({
       </span>
       <div className="flex justify-between flex-wrap gap-4">
         <InputField
-          label="First Name"
-          name="firstName"
-          defaultValue={data?.firstName}
-          register={register}
-          error={errors.firstName}
-        />
-        <InputField
-          label="Last Name"
-          name="lastName"
-          defaultValue={data?.lastName}
-          register={register}
-          error={errors.lastName}
-        />
-        <InputField
-          label="Phone"
-          name="phone"
-          defaultValue={data?.phone}
-          register={register}
-          error={errors.phone}
-        />
-        <InputField
-          label="Address"
-          name="address"
-          defaultValue={data?.address}
-          register={register}
-          error={errors.address}
-        />
-        <InputField
-          label="Birthday"
-          name="birthday"
+          label="Date"
+          name="date"
           type="date"
-          defaultValue={data?.birthday}
+          defaultValue={data?.date}
           register={register}
-          error={errors.birthday}
+          error={errors.date}
         />
 
         <div className="flex flex-col gap-2 w-full md:w-1/4">
-          <label className="text-xs text-gray-500">sexe</label>
+          <label className="text-xs text-gray-500">Priority</label>
           <select
             className="ring-[1.5px] ring-red-300 p-2 rounded-md text-sm w-full"
-            {...register("sexe")}
+            {...register("priority")}
             defaultValue={data?.sexe}
           >
-            <option value="male">Male</option>
-            <option value="female">Female</option>
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
           </select>
-          {errors.sexe?.message && (
+          {errors.priority?.message && (
             <p className="text-xs text-red-400">
-              {errors.sexe.message.toString()}
+              {errors.priority.message.toString()}
             </p>
           )}
         </div>

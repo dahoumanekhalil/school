@@ -3,16 +3,17 @@
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import { useState } from "react";
-import ParentForm from "./forms/ParentForm";
-import SubjectForm from "./forms/SubjectForm";
+// import ParentForm from "./forms/ParentForm";
 // import SubjectForm from "./forms/SubjectForm";
-import ClassForm from "./forms/ClassForm";
-import LessonForm from "./forms/LessonForm";
-import ResultForm from "./forms/ResultForm";
-import ExamForm from "./forms/ExamForm";
-import EventForm from "./forms/EventForm";
-import AssignmentForm from "./forms/AssignmentForm";
-import PriorityForm from "./forms/TeacherForm";
+// import SubjectForm from "./forms/SubjectForm";
+// import ClassForm from "./forms/ClassForm";
+// import LessonForm from "./forms/LessonForm";
+// import ResultForm from "./forms/ResultForm";
+// import ExamForm from "./forms/ExamForm";
+// import EventForm from "./forms/EventForm";
+// import AssignmentForm from "./forms/AssignmentForm";
+// import LessonForm from "./forms/LessonForm";
+// import PriorityForm from "./forms/TeacherForm";
 // import TeacherForm from "./forms/TeacherForm";
 // import StudentForm from "./forms/StudentForm";
 
@@ -22,7 +23,46 @@ const TeacherForm = dynamic(() => import("./forms/TeacherForm"), {
   ),
 });
 const StudentForm = dynamic(() => import("./forms/StudentForm"), {
-  // loading: () => <h1>Loading...</h1>,
+  loading: () => (
+    <h1 className="flex justify-center text-center">Loading...</h1>
+  ),
+});
+const ParentForm = dynamic(() => import("./forms/ParentForm"), {
+  loading: () => (
+    <h1 className="flex justify-center text-center">Loading...</h1>
+  ),
+});
+const SubjectForm = dynamic(() => import("./forms/SubjectForm"), {
+  loading: () => (
+    <h1 className="flex justify-center text-center">Loading...</h1>
+  ),
+});
+const ClassForm = dynamic(() => import("./forms/ClassForm"), {
+  loading: () => (
+    <h1 className="flex justify-center text-center">Loading...</h1>
+  ),
+});
+const AnnouncementForm = dynamic(() => import("./forms/AnnouncementForm"), {
+  loading: () => (
+    <h1 className="flex justify-center text-center">Loading...</h1>
+  ),
+});
+const ResultForm = dynamic(() => import("./forms/ResultForm"), {
+  loading: () => (
+    <h1 className="flex justify-center text-center">Loading...</h1>
+  ),
+});
+const ExamForm = dynamic(() => import("./forms/ExamForm"), {
+  loading: () => (
+    <h1 className="flex justify-center text-center">Loading...</h1>
+  ),
+});
+const EventForm = dynamic(() => import("./forms/EventForm"), {
+  loading: () => (
+    <h1 className="flex justify-center text-center">Loading...</h1>
+  ),
+});
+const AssignmentForm = dynamic(() => import("./forms/AssignmentForm"), {
   loading: () => (
     <h1 className="flex justify-center text-center">Loading...</h1>
   ),
@@ -41,7 +81,7 @@ const forms: {
   exam: (type, data) => <ExamForm type={type} data={data} />,
   event: (type, data) => <EventForm type={type} data={data} />,
   assignment: (type, data) => <AssignmentForm type={type} data={data} />,
-  announcement: (type, data) => <PriorityForm type={type} data={data} />,
+  announcement: (type, data) => <AnnouncementForm type={type} data={data} />,
 };
 
 const FormModal = ({
