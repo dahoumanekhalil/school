@@ -123,9 +123,9 @@ const ProfileStudentPage = () => {
             </Link>
             <Link
               className="p-3 rounded-md bg-beproSky hover:bg-beproGreen transition-all hover:scale-110"
-              href="/"
+              href={`/list/teachers?classId=${2}`}
             >
-              student teacher
+              student&apos;s teacher
             </Link>
             <Link
               className="p-3 rounded-md bg-beproSky hover:bg-beproGreen transition-all hover:scale-110"
