@@ -134,6 +134,7 @@ const TeacherListPage = async ({
     }),
     prisma.teacher.count({ where: query }),
   ]);
+
   return (
     <div className="bg-white p-4 rounded-md flex-1 m4 mt-0">
       {/* top  */}
