@@ -138,7 +138,7 @@ const ProfileTeacherPage = () => {
           <div className="mt-4 flex gap-4 flex-wrap text-xs text-gray-500">
             <Link
               className="p-3 rounded-md bg-beproSky hover:bg-beproGreen transition-all hover:scale-110"
-              href="/"
+              href={`/list/classes?supervisorId=${"teacher2"}`}
             >
               teacher classes
             </Link>
@@ -150,19 +150,19 @@ const ProfileTeacherPage = () => {
             </Link>
             <Link
               className="p-3 rounded-md bg-beproSky hover:bg-beproGreen transition-all hover:scale-110"
-              href="/"
+              href={`/list/lessons?teacherId=${"teacher2"}`}
             >
               teacher lessons
             </Link>
             <Link
               className="p-3 rounded-md bg-beproSky hover:bg-beproGreen transition-all hover:scale-110"
-              href="/"
+              href={`/list/exams?teacherId=${"teacher2"}`}
             >
               teacher exams
             </Link>
             <Link
               className="p-3 rounded-md bg-beproSky hover:bg-beproGreen transition-all hover:scale-110"
-              href="/"
+              href={`/list/assignments?teacherId=${"teacher2"}`}
             >
               teacher assignments
             </Link>

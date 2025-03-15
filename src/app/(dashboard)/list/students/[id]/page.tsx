@@ -117,7 +117,7 @@ const ProfileStudentPage = () => {
           <div className="mt-4 flex gap-4 flex-wrap text-xs text-gray-500">
             <Link
               className="p-3 rounded-md bg-beproSky hover:bg-beproGreen transition-all hover:scale-110"
-              href="/"
+              href={`/list/lessons?classId=${2}`}
             >
               student lessons
             </Link>
@@ -129,19 +129,19 @@ const ProfileStudentPage = () => {
             </Link>
             <Link
               className="p-3 rounded-md bg-beproSky hover:bg-beproGreen transition-all hover:scale-110"
-              href="/"
+              href={`/list/results?classId=${2}`}
             >
               student results
             </Link>
             <Link
               className="p-3 rounded-md bg-beproSky hover:bg-beproGreen transition-all hover:scale-110"
-              href="/"
+              href={`/list/exams?classId=${2}`}
             >
               student exams
             </Link>
             <Link
               className="p-3 rounded-md bg-beproSky hover:bg-beproGreen transition-all hover:scale-110"
-              href="/"
+              href={`/list/assignments?classId=${2}`}
             >
               student assignments
             </Link>
