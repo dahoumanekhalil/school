@@ -21,6 +21,7 @@ const config: Config = {
         beproPurpleLight: "#F1F0FF",
         beproSky: "#00FF8466",
         beproYellowLight: "#FEFCE8",
+        beproBackground: "#f0f0f0",
       },
     },
   },
