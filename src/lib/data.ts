@@ -129,7 +129,7 @@ export const studentsData = [
   {
     id: 1,
     studentId: "1234567890",
-    name: "John Doe",
+    name: "Cole Larson",
     email: "john@doe.com",
     photo:
       "https://images.pexels.com/photos/2888150/pexels-photo-2888150.jpeg?auto=compress&cs=tinysrgb&w=1200",
@@ -141,7 +141,7 @@ export const studentsData = [
   {
     id: 2,
     studentId: "1234567890",
-    name: "Jane Doe",
+    name: "Ronnie Johnson",
     email: "jane@doe.com",
     photo:
       "https://images.pexels.com/photos/936126/pexels-photo-936126.jpeg?auto=compress&cs=tinysrgb&w=1200",
@@ -153,7 +153,7 @@ export const studentsData = [
   {
     id: 3,
     studentId: "1234567890",
-    name: "Mike Geller",
+    name: "Troy Day",
     email: "mike@geller.com",
     photo:
       "https://images.pexels.com/photos/428328/pexels-photo-428328.jpeg?auto=compress&cs=tinysrgb&w=1200",
@@ -165,7 +165,7 @@ export const studentsData = [
   {
     id: 4,
     studentId: "1234567890",
-    name: "Jay French",
+    name: "Amelia Swanson",
     email: "jay@gmail.com",
     photo:
       "https://images.pexels.com/photos/1187765/pexels-photo-1187765.jpeg?auto=compress&cs=tinysrgb&w=1200",
@@ -177,7 +177,7 @@ export const studentsData = [
   {
     id: 5,
     studentId: "1234567890",
-    name: "Jane Smith",
+    name: "Julian Ortiz",
     email: "jane@gmail.com",
     photo:
       "https://images.pexels.com/photos/1102341/pexels-photo-1102341.jpeg?auto=compress&cs=tinysrgb&w=1200",
@@ -189,7 +189,7 @@ export const studentsData = [
   {
     id: 6,
     studentId: "1234567890",
-    name: "Anna Santiago",
+    name: "Beulah Atkins",
     email: "anna@gmail.com",
     photo:
       "https://images.pexels.com/photos/712513/pexels-photo-712513.jpeg?auto=compress&cs=tinysrgb&w=1200",
@@ -201,7 +201,7 @@ export const studentsData = [
   {
     id: 7,
     studentId: "1234567890",
-    name: "Allen Black",
+    name: "Hettie Fletcher",
     email: "allen@black.com",
     photo:
       "https://images.pexels.com/photos/1438081/pexels-photo-1438081.jpeg?auto=compress&cs=tinysrgb&w=1200",
@@ -213,7 +213,7 @@ export const studentsData = [
   {
     id: 8,
     studentId: "1234567890",
-    name: "Ophelia Castro",
+    name: "Ina Fleming",
     email: "ophelia@castro.com",
     photo:
       "https://images.pexels.com/photos/1036623/pexels-photo-1036623.jpeg?auto=compress&cs=tinysrgb&w=1200",
@@ -225,7 +225,7 @@ export const studentsData = [
   {
     id: 9,
     studentId: "1234567890",
-    name: "Derek Briggs",
+    name: "Lucy Soto",
     email: "derek@briggs.com",
     photo:
       "https://images.pexels.com/photos/842980/pexels-photo-842980.jpeg?auto=compress&cs=tinysrgb&w=1200",
@@ -237,7 +237,7 @@ export const studentsData = [
   {
     id: 10,
     studentId: "1234567890",
-    name: "John Glover",
+    name: "Isabelle Watson",
     email: "john@glover.com",
     photo:
       "https://images.pexels.com/photos/1043474/pexels-photo-1043474.jpeg?auto=compress&cs=tinysrgb&w=1200",
@@ -251,7 +251,7 @@ export const studentsData = [
 export const parentsData = [
   {
     id: 1,
-    name: "John Doe",
+    name: "Hunter Reynolds",
     students: ["Sarah Brewer"],
     email: "john@doe.com",
     phone: "1234567890",
@@ -259,7 +259,7 @@ export const parentsData = [
   },
   {
     id: 2,
-    name: "Jane Doe",
+    name: "Ricardo Clark",
     students: ["Cecilia Bradley"],
     email: "jane@doe.com",
     phone: "1234567890",
@@ -267,7 +267,7 @@ export const parentsData = [
   },
   {
     id: 3,
-    name: "Mike Geller",
+    name: "Hannah Martinez",
     students: ["Fanny Caldwell"],
     email: "mike@geller.com",
     phone: "1234567890",
@@ -275,7 +275,7 @@ export const parentsData = [
   },
   {
     id: 4,
-    name: "Jay French",
+    name: "Andre Malone",
     students: ["Mollie Fitzgerald", "Ian Bryant"],
     email: "mike@geller.com",
     phone: "1234567890",
@@ -283,7 +283,7 @@ export const parentsData = [
   },
   {
     id: 5,
-    name: "Jane Smith",
+    name: "Douglas Haynes",
     students: ["Mable Harvey"],
     email: "mike@geller.com",
     phone: "1234567890",
@@ -291,7 +291,7 @@ export const parentsData = [
   },
   {
     id: 6,
-    name: "Anna Santiago",
+    name: "Adrian Gomez",
     students: ["Joel Lambert"],
     email: "mike@geller.com",
     phone: "1234567890",
@@ -299,7 +299,7 @@ export const parentsData = [
   },
   {
     id: 7,
-    name: "Allen Black",
+    name: "Lena Young",
     students: ["Carrie Tucker", "Lilly Underwood"],
     email: "mike@geller.com",
     phone: "1234567890",
@@ -307,7 +307,7 @@ export const parentsData = [
   },
   {
     id: 8,
-    name: "Ophelia Castro",
+    name: "Nathaniel Nichols",
     students: ["Alexander Blair"],
     email: "mike@geller.com",
     phone: "1234567890",
@@ -315,7 +315,7 @@ export const parentsData = [
   },
   {
     id: 9,
-    name: "Derek Briggs",
+    name: "Blanche Watson",
     students: ["Susan Webster", "Maude Stone"],
     email: "mike@geller.com",
     phone: "1234567890",
@@ -323,7 +323,7 @@ export const parentsData = [
   },
   {
     id: 10,
-    name: "John Glover",
+    name: "Dustin Bridges",
     students: ["Stella Scott"],
     email: "mike@geller.com",
     phone: "1234567890",

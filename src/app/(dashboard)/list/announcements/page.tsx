@@ -2,13 +2,16 @@ import FormModal from "@/components/FormModal";
 import Pagination from "@/components/Pagination";
 import Table from "@/components/Table";
 import TableSearch from "@/components/TableSearch";
-import { role, announcementsData } from "@/lib/data";
 import prisma from "@/lib/prisma";
 import { ITEM_PER_PAGE } from "@/lib/settings";
+import { role } from "@/lib/utils";
 import { Announcement, Class, Prisma } from "@prisma/client";
 import Image from "next/image";
+// import { useEffect, useState } from "react";
 
 type AnnouncementList = Announcement & { class: Class };
+
+const userRole = await role();
 
 const columns = [
   {
@@ -25,10 +28,14 @@ const columns = [
     accessor: "date",
     className: "hidden md:table-cell",
   },
-  {
-    header: "Actions",
-    accessor: "actions",
-  },
+  ...(userRole === "admin"
+    ? [
+        {
+          header: "Actions",
+          accessor: "actions",
+        },
+      ]
+    : []),
 ];
 
 const renderRow = (item: AnnouncementList) => (
@@ -47,7 +54,7 @@ const renderRow = (item: AnnouncementList) => (
     </td>
     <td>
       <div className="flex items-center gap-2">
-        {role === "admin" && (
+        {userRole === "admin" && (
           <>
             <FormModal table="announcement" type="update" data={item} />
             <FormModal table="announcement" type="delete" id={item.id} />
@@ -67,7 +74,6 @@ const AnnouncementListPage = async ({
   const p = page ? parseInt(page) : 1;
 
   // URL PARAM CONDITION
-
   const query: Prisma.AnnouncementWhereInput = {};
 
   if (queryParams) {
@@ -112,7 +118,7 @@ const AnnouncementListPage = async ({
             <button className="w-8 h-8 flex items-center justify-center rounded-full bg-[#00ff84] hover:bg-[#00ff8488] transition-all hover:scale-110">
               <Image src="/sort.png" alt="icon" width={14} height={14} />
             </button>
-            {role === "admin" && (
+            {userRole === "admin" && (
               <FormModal table="announcement" type="create" />
             )}
           </div>
