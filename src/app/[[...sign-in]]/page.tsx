@@ -62,7 +62,7 @@ const LoginPage = () => {
             <Clerk.FieldError className="mt-2 block text-xs text-rose-400" />
           </Clerk.Field> */}
           <Clerk.Field name="password" className="group/field relative mt-5">
-            <Clerk.Label className="absolute left-2 top-0 -translate-y-1/2 bg-white px-2 font-mono text-xs/4 text-beproBlack before:absolute before:inset-0 before:-z-10 before:bg-white/50 group-focus-within/field:text-emerald-300 group-data-[invalid]/field:text-rose-400">
+            <Clerk.Label className="absolute left-2 top-0 -translate-y-1/2  px-2 font-mono text-xs/4 text-beproBlack before:absolute before:inset-0 before:-z-10 focus:text-beproBlack group-focus-within/field:text-emerald-300 group-data-[invalid]/field:text-rose-400">
               Password
             </Clerk.Label>
             <Clerk.Input
