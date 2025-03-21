@@ -5,13 +5,12 @@ import TableSearch from "@/components/TableSearch";
 import prisma from "@/lib/prisma";
 import { ITEM_PER_PAGE } from "@/lib/settings";
 import { role } from "@/lib/utils";
+import { auth } from "@clerk/nextjs/server";
 import { Announcement, Class, Prisma } from "@prisma/client";
 import Image from "next/image";
 // import { useEffect, useState } from "react";
 
 type AnnouncementList = Announcement & { class: Class };
-
-const userRole = await role();
 
 const columns = [
   {
@@ -28,7 +27,7 @@ const columns = [
     accessor: "date",
     className: "hidden md:table-cell",
   },
-  ...(userRole === "admin"
+  ...(role === "admin"
     ? [
         {
           header: "Actions",
@@ -54,7 +53,7 @@ const renderRow = (item: AnnouncementList) => (
     </td>
     <td>
       <div className="flex items-center gap-2">
-        {userRole === "admin" && (
+        {role === "admin" && (
           <>
             <FormModal table="announcement" type="update" data={item} />
             <FormModal table="announcement" type="delete" id={item.id} />
@@ -70,6 +69,10 @@ const AnnouncementListPage = async ({
 }: {
   searchParams: { [key: string]: string | undefined };
 }) => {
+  const { userId, sessionClaims } = await auth();
+  const role = (sessionClaims?.metadata as { role?: string })?.role;
+  const currentUserId = userId;
+
   const { page, ...queryParams } = searchParams;
   const p = page ? parseInt(page) : 1;
 
@@ -118,7 +121,7 @@ const AnnouncementListPage = async ({
             <button className="w-8 h-8 flex items-center justify-center rounded-full bg-[#00ff84] hover:bg-[#00ff8488] transition-all hover:scale-110">
               <Image src="/sort.png" alt="icon" width={14} height={14} />
             </button>
-            {userRole === "admin" && (
+            {role === "admin" && (
               <FormModal table="announcement" type="create" />
             )}
           </div>
