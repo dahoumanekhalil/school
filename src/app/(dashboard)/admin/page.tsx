@@ -12,10 +12,10 @@ const AdminPage = () => {
       <div className="w-full lg:w-[75%] flex flex-col gap-8">
         {/* user cards  */}
         <div className="flex gap-4 justify-between flex-wrap">
+          <Usercard type="admin" />
           <Usercard type="student" />
           <Usercard type="teacher" />
           <Usercard type="parent" />
-          <Usercard type="staff" />
         </div>
         {/* middle cahart  */}
         <div className="flex gap-4 flex-col lg:flex-row">
