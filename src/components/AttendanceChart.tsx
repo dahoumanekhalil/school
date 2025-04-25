@@ -1,10 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import {
   BarChart,
   Bar,
-  Rectangle,
   XAxis,
   YAxis,
   CartesianGrid,
