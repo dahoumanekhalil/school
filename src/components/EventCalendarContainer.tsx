@@ -2,9 +2,14 @@ import Image from "next/image";
 import EventCalendar from "./EventCalendar";
 import EventList from "./EventList";
 
-const EventCalendarContainer = () => {
+const EventCalendarContainer = async ({
+  searchParams,
+}: {
+  searchParams: { [keys: string]: string | undefined };
+}) => {
+  const { date } = searchParams;
   return (
-    <div className="">
+    <div className="bg-white p-4 rounded-md">
       {/* <Calendar onChange={onChange} value={value} /> */}
       <EventCalendar />
       <div className="flex items-center justify-between">
@@ -12,7 +17,7 @@ const EventCalendarContainer = () => {
         <Image src="/moreDark.png" alt="icon" width={20} height={20} />
       </div>
       <div className="flex flex-col gap-4">
-        <EventList />
+        <EventList dateParam={date} />
       </div>
     </div>
   );
